@@ -117,7 +117,7 @@ java.net.ConnectException: Connection timed out: connect
         Caused: javax.mail.MessagingException: Could not connect to SMTP host: smtp.pepipost.com, port: 25;
 ```
 
-Solution : Try telnetting smtp server on different port 587,252525 etc. if that works change smtp port in your configuration.
+Solution : Try telnetting smtp server on different port 587,2525,25 etc. if that works change smtp port in your configuration.
 
 ### Error 2
 
@@ -145,7 +145,7 @@ If you are using gmail as smtp server you may below error
 javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
 535 5.7.8  https://support.google.com/mail/?p=BadCredentials r2sm51378882pfq.60 - gsmtp
 ```
-Solution : If you have entered wrong password or username correct it.And in gmail allow less secure apps to login.
+Solution : If you have entered wrong password or username correct it.And in gmail allow less secure apps to login or install jenkins to use https.
 
 ## Conclusion
 Now you can successfully configure email notifications for your build/test/deploy pipelines.
