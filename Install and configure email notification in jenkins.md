@@ -26,56 +26,56 @@ This tutorial is based on jenkins version 2.194 installed on localhost and  usin
 1) Open Jenkins using using the following URL: http://localhost:8080/ on any browser(in my case port is 8071)
 2) Click on Manage Jenkins
 
-    ![jenkins1](https://i.imgur.com/kioMbcD.png)
+    ![manage jenkins_img](https://i.imgur.com/kioMbcD.png)
 
 3) Click on Manage Plugins.
 
-   ![jenkins2](https://i.imgur.com/OvhurfE.png)
+   ![manage_plugins_img](https://i.imgur.com/OvhurfE.png)
 
 4) Select Email Extension and 	
 Email Extension Template Plugin and click install without restart
 
-   ![jenkins3](https://i.imgur.com/NzEdcZ7.png)
+   ![installation_img](https://i.imgur.com/NzEdcZ7.png)
 
 #### Once the plugin is installed lets configure it with smtp servers
 
-   ![jenkins4](https://i.imgur.com/OvhurfE.png)
+   ![configure_img](https://i.imgur.com/OvhurfE.png)
 
 
 ## Step 2 — Configure Email Notifications
 
 1) Click on Manage Jenkins and then Configure system
 
-   ![jenkins5](https://i.imgur.com/qoGEqQd.png)
+   ![configure_system_img](https://i.imgur.com/qoGEqQd.png)
 
 2) Scroll below till E-mail Notification and click on advanced. 
 Setup it as shown in below screenshot and save it.
    
-   ![jenkins6](https://i.imgur.com/A1Slumx.png)
+   ![configure_system_img](https://i.imgur.com/A1Slumx.png)
 
 You can test configurations by entering recipient email id and clicking on test configuration.If all is good it will show Email sent successfully,
 You may get error while testing configurations, below is possible errors and solution to it.
 
-  ![jenkins7](https://i.imgur.com/bV4SeuC.png)
+  ![test_configuration_img](https://i.imgur.com/bV4SeuC.png)
 
 In step 4 we will configure Extended Email Notification where in we can configure email content and set triggers.
 
 ## Step 3 — Configuring Email-Notification in our jobs or pipeline
 1) Go to your jenkins home page and click on created job(for me its gradlerun)
 
-    ![jenkins8](https://i.imgur.com/MSNVFok.png)
+    ![configure_email_notification](https://i.imgur.com/MSNVFok.png)
 
 2) Click on Configure 
  
-    ![jenkins9](https://i.imgur.com/OvhurfE.png)
+    ![configure_email_notification](https://i.imgur.com/OvhurfE.png)
 
 3) Once your job configuration opens scroll down to add post-build action and select Email Notifications 
 
-    ![jenkins10](https://i.imgur.com/pwYWHhC.png)
+    ![configure_jekins_job](https://i.imgur.com/pwYWHhC.png)
 
 4) Enter recipients and check Send e-mail for every unstable build and save it.
 
-    ![jenkins11](https://i.imgur.com/o4i1v59.png)
+    ![configure_jekins_job](https://i.imgur.com/o4i1v59.png)
 
 Here you go! Run your job and you start recieving email.
 
@@ -85,11 +85,11 @@ Here you go! Run your job and you start recieving email.
 
 From step 2 scroll below till Extended E-mail Notification as setup it as shown in screenshot you can set your own triggers also, every option or setting in self explanatory , configure it as per your requirement.
 
-   ![jenkins12](https://i.imgur.com/tzxdg5E.png)
+   ![configure_extended_email](https://i.imgur.com/tzxdg5E.png)
 
-   ![jenkins13](https://i.imgur.com/KJVk88j.png)
+   ![configure_extended_email](https://i.imgur.com/KJVk88j.png)
 
-   ![jenkins14](https://i.imgur.com/n4Cl9l2.png)
+   ![configure_extended_email](https://i.imgur.com/n4Cl9l2.png)
 
 That's it you have successfully configured email settings, Lets set this up in our pipeline or jobs.
 
@@ -97,11 +97,11 @@ That's it you have successfully configured email settings, Lets set this up in o
 
 From step 3 in add post-build action and select Editable Email Notifications. 
     
-   ![jenkins15](https://i.imgur.com/AhuJ5u8.png)
+   ![configure_extended_email_injob](https://i.imgur.com/AhuJ5u8.png)
 
 Once it is added in build action save it.
     
-   ![jenkins16](https://i.imgur.com/IflE7lb.png)
+   ![configure_extended_email_injob](https://i.imgur.com/IflE7lb.png)
 
 Now you will recieve custom email for each of your job actions. 
 
