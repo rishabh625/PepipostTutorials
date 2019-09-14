@@ -65,9 +65,9 @@ In step 4 we will configure Extended Email Notification where in we can configur
 
     ![configure_email_notification](https://i.imgur.com/MSNVFok.png)
 
-2) Click on Configure 
+2) Click on Manage Plugins 
  
-    ![configure_email_notification](https://i.imgur.com/OvhurfE.png)
+    ![manage_plugins](https://i.imgur.com/OvhurfE.png)
 
 3) Once your job configuration opens scroll down to add post-build action and select Email Notifications 
 
