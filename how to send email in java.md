@@ -287,8 +287,7 @@ At the End of the article Find Running Java Code to send attachments in Email.
 ## Conclusion
 
 Now You can send email using SMTP Servers in your Java Project
-
-Java Code to send attachment in Email
+#### Java Code to send attachment in Email
 ``` java
 package com.sendemail;
 
