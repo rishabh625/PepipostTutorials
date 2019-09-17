@@ -1,42 +1,37 @@
-
-
 # How To Send Email in Java.
-
-
 
 ### Introduction
 
-Sending Email is the most common and necessary requirement for most of the applications. Java provides Java Mail API a platform-independent and protocol-independent framework to build mail and messaging applications.
+*Sending Email* is the most common and necessary requirement for most of the applications. Java provides Java Mail API - a platform and protocol independent framework to build mail and messaging applications.
 
-The JavaMail reference implementation is licensed under the Common Development and Distribution License (CDDL) v1.1 and GNU General Public License (GPL) v2 with Classpath Exception.  
+The JavaMail reference implementation is licensed under the Common Development and Distribution License (CDDL) v1.1 and GNU General Public License (GPL) v2 with Classpath Exception.
 
-In this guide, you will get detailed steps on how to setup JavaMail in your Java Project And implement JavaMail API to build and send emails on SMTP protocol.
+In this guide, you will get detailed steps on how to setup JavaMail in your Java Project and implement JavaMail API to build and send emails on SMTP protocol.
 
 ## Prerequisites
 
-Eclipse IDE
+- Eclipse IDE
+- Java Runtime Environment
 
-Java Runtime Environment
+## Step 1 - Create new Maven Project 
 
-## Step 1 — Create new Maven Project 
-
-Click on File > New > Project > Maven > Maven Project.
+1. Click on `File > New > Project > Maven > Maven Project`
 
 ![new maven project](https://i.imgur.com/m7yMKFJ.png)
 
-Check Create  a simple project(skip archetype selection) and click finish.
+2. Select *Create  a simple project(skip archetype selection)* and click *Finish*.
 
 ![archetype of maven](https://i.imgur.com/UCCklVj.png)
 
-Give Artifact Id and group Id to your project.
+3. Give Artifact Id and group Id to your project.
 
 ![artifact and group id maven](https://i.imgur.com/I8I8Uas.png)
 
-This will give default project structure as below
+4. This will give default project structure as below:
 
 ![project_structure](https://i.imgur.com/4mL0MRa.png)
 
-A default pom.xml is created
+5. A default pom.xml is created:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -49,7 +44,7 @@ A default pom.xml is created
 </project>
 
 ```
-Add following dependencies in your pom.xml file.
+6. Add following dependencies in your pom.xml file.
 
 ```xml
 <dependencies>
@@ -83,53 +78,45 @@ Final pom.xml
 ```
 
 
-## Step 2 — Create Java Class
-1) Right click on project and create new package and name it com.sendemail
+## Step 2 - Create Java Class
+1. Right click on *Project* and create new package and name it com.sendemail
 
 ![java package](https://i.imgur.com/yDPkth5.png)
 
-2) Right click on package and create SendMail class
-   check to create main method 
+2.  Right click on package and create SendMail class
+   check to create main method:
 
 ![java class](https://i.imgur.com/55VUyVC.png)
 
-In our code we would require to import following packages and class.
+In your code we would require to import following packages and class.
 
-1) import java.util.Properties;
-   
-   The Properties class represents a persistent set of properties. The Properties can be saved to a stream or loaded from a stream.
+-  import java.util.Properties;
+The Properties class represents a persistent set of properties. The Properties can be saved to a stream or loaded from a stream.
 
-2) import javax.mail.Message;
+- import javax.mail.Message;
+This class models an email message. To send a message,subclass of Message (e.g. MimeMessage) is instantiated, the attributes and content are filled in, and message is sent using the Transport.send method.
 
-   This class models an email message.
-   To send a message,subclass of Message (e.g. MimeMessage) is instantiated, the attributes and content are filled in, and message is sent using the Transport.send method.
+- import javax.mail.MessagingException;
+This is base class for all exceptions thrown by the Messaging classes
 
-3) import javax.mail.MessagingException;
+- import javax.mail.PasswordAuthentication;
+This class is simply a repository for a user name and a password.
 
-   This is base class for all exceptions thrown by the Messaging classes
+- import javax.mail.Session;
+Session class represents a mail session.
 
-4) import javax.mail.PasswordAuthentication;
+- import javax.mail.Transport;
+This is abstract class that models a message transport.
 
-    This class is simply a repository for a user name and a password.
+- import javax.mail.internet.InternetAddress;
+This class represents an Internet email address using the syntax of RFC822
 
-5) import javax.mail.Session;
-   
-    Session class represents a mail session.
+- import javax.mail.internet.MimeMessage;
+This class represents a MIME style email message. It implements the Message abstract class and the MimePart interface.
 
-6) import javax.mail.Transport;
-    
-   This is abstract class that models a message transport.
+## Sending Email Through Java Using Gmail SMTP
 
-7) import javax.mail.internet.InternetAddress;
-
-   This class represents an Internet email address using the syntax of 
-   RFC822
-
-8)  import javax.mail.internet.MimeMessage;
-
-    This class represents a MIME style email message. It implements the Message abstract class and the MimePart interface.
-
- Below is the full Java code to send emails using gmail SMTP server, with description of each line .
+Below is the full Java code to send emails using Gmail SMTP server, with description of each line:
 
 ``` java
 package com.sendemail;
@@ -210,7 +197,7 @@ public class SendMail {
 
 ```
 If you want to send HTML content replace ``` 
-message.setText("This is actual message")``` with below code
+message.setText("This is actual message")``` with below code:
 
 ```java
     // Send the actual HTML message.
@@ -220,40 +207,35 @@ message.setText("This is actual message")``` with below code
 ```
 
 
-## Step 3 — Test Java Code 
+## Step 3 - Test Java Code
 
 Run Java Application and email will be sent to recipient. Your console will look like this.
 
 ![test result](https://i.imgur.com/w6rbbnn.png)
 
-You Have successfully sent email using your Java Code.
+You have successfully sent email using your Java Code.
+
 Now let's send file attachment in your email.
 
 ## Optional Steps
 
-## Step 4 — Send Email with Attachement.
+## Step 4 - Send Email with Attachment.
 
 To send email with attachment will have to import few more classes.
 
-1) import java.io.File and 
-import java.io.IOException
+**1. import java.io.File and import java.io.IOException**
+File Class is an abstract representation of file and directory pathnames and IOException class is general class of exceptions produced by failed or interrupted I/O operations.
 
-    File Class is an abstract representation of file and directory pathnames and IOException class is general class of exceptions produced by failed or interrupted I/O operations.
+**2. import javax.mail.internet.MimeMultipart**
+This Class is an implementation of the abstract Multipart class that uses MIME conventions for data.
 
-2) import javax.mail.internet.MimeMultipart
-    
-    This Class is an implementation of the abstract Multipart class that uses MIME conventions for data.
-
-3) import javax.mail.internet.MimeBodyPart
-
-    This class represents a MIME body part.
+**3. import javax.mail.internet.MimeBodyPart**
+This class represents a MIME body part.
 MimeBodyPart uses the InternetHeaders class to parse and store the headers of that body part.
-
-
 
 Below is the java code to send attachment in email.
 
-The code has two MIME Body part one carrying attachment and other carrying text for email, this are added in Multipart, then this multipart is used to set as content of message.
+The code has two MIME Body part one carrying attachment and other carrying text for email, this are added in `Multipart`, then this multipart is used to set as content of message.
 
 ``` java 
 Multipart multipart = new MimeMultipart();
@@ -281,12 +263,7 @@ Multipart multipart = new MimeMultipart();
 
 ```
 
-At the End of the article Find Running Java Code to send attachments in Email. 
-
-
-## Conclusion
-
-Now You have implemented Java Mail API in your project and you can send emails using SMTP Servers in your Project.
+Here is a running Java Code to send attachments in email:
 #### Java Code to send attachment in Email
 ``` java
 package com.sendemail;
@@ -390,3 +367,6 @@ public class SendMail {
 
 ```
 
+## Conclusion
+
+Now you have implemented Java Mail API successfully and can send emails using any SMTP Servers from your project.
