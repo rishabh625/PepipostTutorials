@@ -179,7 +179,7 @@ If you get any error scroll down to below section of possible errors that you mi
 
    - Create a new directory email in application/views
 
-   - Create a new file email_template.php application/views/email
+   - Create a new file email_template.php in application/views/email
 
    - Add below code to application/views/email/email_template.php
 
@@ -206,7 +206,7 @@ If you get any error scroll down to below section of possible errors that you mi
 
 2) Create View File
    
-   - Create a new file contactus.php application/views/email
+   - Create a new file contactus.php in application/views/email
 
    - Add below code to application/views/email/contactus.php
 
