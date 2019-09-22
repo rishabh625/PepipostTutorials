@@ -28,7 +28,7 @@ Sending email in CodeIgniter is much easier.Just you haved to configure SMTP pro
 Make sure you have PHP-FPM installed,up and running.
 - CodeIgniter 3.1.1
 
-If you are new to CI get it installed using any of the Web Server from belo
+If you are new to CI get it installed on any of the Web Server from below
 
 [on wamp server](https://www.apachefriends.org/download.html)
 
