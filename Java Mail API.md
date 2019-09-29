@@ -232,7 +232,7 @@ That's it you have sent email over SMTP using java Mail API.
 ##### By the time you reach here you would have explored much of JavaMail API 
 
 ``` 
-Fact : Even through Oracle Java JDK and JVM is paid. JavaMail API still will be free as it is published under  Common Development and Distribution License (CDDL) v1.1 and GNU General Public License (GPL) v2 with Classpath Exception
+Fact : Even through Oracle Java JDK and JVM is paid now. JavaMail API still will be free and opensource as it is published under  Common Development and Distribution License (CDDL) v1.1 and GNU General Public License (GPL) v2 with Classpath Exception
 
 JavaMail API is most widely used in Android,Spring Applications.
 ```  
