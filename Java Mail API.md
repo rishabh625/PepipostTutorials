@@ -152,14 +152,14 @@ Lets break down above code 3 parts for better understanding.
 
    Session class provides two methods to get session object.
     
-      1) getDefaultInstance(): Return default session.
+      1) getDefaultInstance() : Return default session.
          
          overloaded as  below
          ```java
            public static Session getDefaultInstance(Properties props)
            public static Session getDefaultInstance(Properties props,Authenticator auth
          ```
-      2) getInstance(): Returns new session.
+      2) getInstance() : Returns new session.
          ```java
           public static Session getInstance(Properties props)
           public static Session getInstance(Properties props,Authenticator auth)
@@ -202,7 +202,7 @@ That's it you have sent email over SMTP using java Mail API.
           your classpath.Add it or if using maven add dependecies in 
           pom.xml.
 
-2) `` SendFailedException.getValidUnsentAddresses() ``` not returning value as expected.
+2) ``` SendFailedException.getValidUnsentAddresses() ``` not returning value as expected.
 
    Solution : You need to enable  property ``` mail.smtp.reportsuccess ``` and 
   ``` mail.smtp.sendpartial ```.
