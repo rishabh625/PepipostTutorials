@@ -596,5 +596,9 @@ public class SendInlineImagesInEmail {
 ```
 Here we have attached the image file as attachment and then set the Content-ID header for image file and then use the same content id in the email message body with <img src='cid:image-id'>.
 
+## can you add an sample for sending attachment though you have written image file as attachment ?
+
+## is there any specific content-type that we need to pass while passing different attachment (txt,html,pdf,etc)?
+
 Conclusion :
 That's it we have learned much of Java Mail API.Used Protocols.Sent Email Using SMTP and explored authentication mechanism, sending inline images, using TLS and SSL.
