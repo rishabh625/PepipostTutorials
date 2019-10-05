@@ -368,7 +368,7 @@ public class SendMail {
 
 
 2) Using SSL
-In earlier releases, it was necessary to explicitly set a socket factory property to enable the use of SSL. From Java Mail API 1.5 it is no longer needed, as the support for SSL is in-built.
+In earlier releases, it was necessary to explicitly set a socket factory property to enable the use of SSL. From Java Mail API 1.4.6 it is no longer needed, as the support for SSL is in-built.
 
 JavaMail API has a special SSL socket factory that can simplify dealing with servers with self-signed certificates.
 
@@ -558,6 +558,30 @@ public class SendInlineImagesInEmail {
    }
 }
 
+```
+
+### Send Email with Attachment 
+
+With Java Mail API we can easily send any file type as attachment.
+
+With Java Mail API 1.3 we need to use FileDataSource Class as follow 
+
+```java
+MimeBodyPart attachPart = new MimeBodyPart();
+String attachFile = "/home/rishabh.mishra/file.mp4";
+ 
+DataSource source = new FileDataSource(attachFile);
+attachPart.setDataHandler(new DataHandler(source));
+attachPart.setFileName(new File(attachFile).getName());
+ 
+multipart.addBodyPart(attachPart);
+```
+With Java Mail API 1.4 it is much easier, just need to use attachFile(File file) or attachFile(String s) of MimeBodyPart class
+```java
+MimeBodyPart attachPart = new MimeBodyPart();
+String attachFile = "/home/rishabh.mishra/file.mp4";
+attachPart.attachFile(attachFile);
+multipart.addBodyPart(attachPart);
 ```
 
 Here in this example image file has been used as an attachment. So, you have to set the Content-ID header for the image file and then use the same Content-ID in the email message body with `<img src='cid:image-id'>`.
